@@ -1,10 +1,12 @@
 package kr.co.tjoeun.daily10minute_20200719
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_login.*
 import kr.co.tjoeun.daily10minute_20200719.utils.ServerUtil
 import org.json.JSONObject
+import kotlin.math.sign
 
 class LoginActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -16,6 +18,13 @@ class LoginActivity : BaseActivity() {
     }
 
     override fun setupEvents() {
+
+        signUpBtn.setOnClickListener {
+
+            val myIntent = Intent(mContext, SignUpActivity::class.java)
+            startActivity(myIntent)
+
+        }
 
         loginBtn.setOnClickListener {
 
